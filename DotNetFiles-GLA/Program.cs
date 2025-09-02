@@ -1,39 +1,31 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System;
 
-using System;
-
-class TransactionSumCalculator
+class AnalyticsTool
 {
-    public static void CalculateSum()
+    public static void CalculateTransactionSum()
     {
         int[] transactions = { 200, -150, 340, 500, -100 };
         int total = 0;
-        foreach (int amount in transactions)
+        for (int i = 0; i < transactions.Length; i++)
         {
-            total += amount;
+            total += transactions[i];
         }
         Console.WriteLine("Total sum of all transactions: " + total);
     }
-}
 
-class AverageScoreCalculator
-{
-    public static void CalculateAverage()
+    public static void CalculateAverageScore()
     {
         float[] scores = { 85.5f, 90.3f, 78.4f, 88.9f, 92.1f };
         float sum = 0f;
-        foreach (float score in scores)
+        for (int i = 0; i < scores.Length; i++)
         {
-            sum += score;
+            sum += scores[i];
         }
         float average = sum / scores.Length;
         Console.WriteLine("Average score of the class: " + average);
     }
-}
 
-class MostExpensiveItemFinder
-{
-    public static void FindMostExpensive()
+    public static void FindMostExpensiveItem()
     {
         int[] prices = { 1500, 2300, 999, 3200, 1750 };
         int max = prices[0];
@@ -46,17 +38,14 @@ class MostExpensiveItemFinder
         }
         Console.WriteLine("Most expensive item price: " + max);
     }
-}
 
-class GenderCountAnalyzer
-{
     public static void CountGenders()
     {
         int[] participantCodes = { 102, 215, 324, 453, 536 };
         int male = 0, female = 0;
-        foreach (int code in participantCodes)
+        for (int i = 0; i < participantCodes.Length; i++)
         {
-            if (code % 2 == 0)
+            if (participantCodes[i] % 2 == 0)
             {
                 male++;
             }
@@ -68,11 +57,8 @@ class GenderCountAnalyzer
         Console.WriteLine("Male participants: " + male);
         Console.WriteLine("Female participants: " + female);
     }
-}
 
-class SearchHistoryReverser
-{
-    public static void ReverseHistory()
+    public static void ReverseSearchHistory()
     {
         int[] searchHistory = { 101, 202, 303, 404, 505 };
         Console.WriteLine("Reversed search history:");
@@ -81,18 +67,13 @@ class SearchHistoryReverser
             Console.WriteLine(searchHistory[i]);
         }
     }
-}
 
-class Program
-{
     static void Main()
     {
-        TransactionSumCalculator.CalculateSum();
-        AverageScoreCalculator.CalculateAverage();
-        MostExpensiveItemFinder.FindMostExpensive();
-        GenderCountAnalyzer.CountGenders();
-        SearchHistoryReverser.ReverseHistory();
+        CalculateTransactionSum();
+        CalculateAverageScore();
+        FindMostExpensiveItem();
+        CountGenders();
+        ReverseSearchHistory();
     }
 }
-
-
